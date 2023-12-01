@@ -24,6 +24,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
 
     if @recipe.save
+      # @recipe.set_content
       redirect_to @recipe, notice: "Recipe was successfully created."
     else
       render :new, status: :unprocessable_entity
